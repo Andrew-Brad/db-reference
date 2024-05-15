@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres_local_dev
+    environment:
+      POSTGRES_USER: dev          # Set a username for the database
+      POSTGRES_PASSWORD: dev  # Set a password for the database
+      POSTGRES_DB: dev        # Initial database to be created
+    ports:
+      - "5432:5432"  # Map port 5432 on your machine to the PostgreSQL port in the container
+    volumes:
+      - postgres_local_dev_data:/var/lib/postgresql/data  # Persist data locally
+
+volumes:
+  postgres_local_dev_data:
+    driver: local  # Use a local volume for data persistence

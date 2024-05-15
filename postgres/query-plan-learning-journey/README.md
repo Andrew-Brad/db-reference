@@ -1,0 +1,1 @@
+# A Simple Learning Journey For Query Plan Analysis in Postgres
